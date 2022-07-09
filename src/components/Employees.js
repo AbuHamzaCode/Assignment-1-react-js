@@ -1,4 +1,3 @@
-import { Card, Col, Row } from "antd";
 import { Component } from "react";
 import './Employees.css';
 
@@ -17,7 +16,6 @@ class Employees extends Component {
 
     componentDidMount() {
         setTimeout(() => this.fetchEmployees(), 3000);
-        
     }
 
     render() {
@@ -31,6 +29,7 @@ class Employees extends Component {
                 </div>
             );
         }
+        
         return(
             <div className="container">
             {employees.map((employee) => (
@@ -72,37 +71,5 @@ class Employees extends Component {
         );
     };
 }
-
-// <Row>
-//             {employees.map((employee) => (
-//                 <Col  key={employee.username}>
-//                     <Card style={{ padding: 10, margin: '20px 0'}} cover={
-//                         <div className="cardHeadImage">
-//                         <img
-//                           src={`https://avatars.dicebear.com/v2/avataaars/${employee.username}.svg?options[mood][]=happy`}
-//                           alt="Avatar"
-//                           style={{ width: 200, height: 200 }}
-//                         />
-//                       </div>
-//                     }>
-//                         <h2>{employee.name}</h2>
-//                         <p>
-//                             <strong>Email: </strong>
-//                             {employee.email}
-//                         </p>
-//                         <p>
-//                             <strong>Address: </strong>
-//                             {employee.address.city}, {employee.address.street}, {employee.address.suite}, 
-//                             {employee.address.zipcode}, {employee.address.geo.lat}, {employee.address.lng}
-//                         </p>
-//                         <p>
-//                             <strong>Phone: </strong>
-//                             {employee.phone}
-//                         </p>
-
-//                     </Card>
-//                 </Col>
-//             ))}
-//         </Row>
 
 export default Employees;
